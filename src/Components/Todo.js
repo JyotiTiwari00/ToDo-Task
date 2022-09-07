@@ -3,24 +3,25 @@ import ShowTodo from './ShowTodo'
 import './Todo.css'
 function Todo() {
 
-    const [task, setTask] = useState("add some task")
-    const [data, setData] = useState([])
+    const [task, setTask] = useState("add some task") 
+    const [data, setData] = useState([]) //created state varble to store user input
 
     const onChangeHandler = (e) => {
-        setTask(e.target.value)
+        setTask(e.target.value)    //SetTask to Update the task
     }
 
-    const submitHandler = (e) => {
-        e.preventDefault();
+    const submitHandler = (e) => {   
+        e.preventDefault();    // is rather then this i would ahve used console.log("submit") if i refresh the data gets clred
+         // using above command and consol the data is to get stored.
         const newData = task;
         setData([...data, newData])
 
-        setTask('')
+        setTask('') //after entering the data it gets clear from the search
     }
 
     const deleteItem =(a)=>{
         const finalData = data.filter((curEle,index)=>{
-            return index !== a;
+            return index !== a; //match the data and remove from the array
         })
         setData(finalData)
     }
@@ -51,8 +52,6 @@ function Todo() {
                             onSelcet={deleteItem}
                         />
                     })}
-
-
                 </div>
             </div>
         </div>

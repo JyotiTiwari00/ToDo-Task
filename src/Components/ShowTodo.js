@@ -6,7 +6,7 @@ function ShowTodo(props) {
             <div className="row my-2">
 
                 <div className="col-6">
-                    <h6>{props.task}</h6>
+                    { <h6>{props.task}</h6>   /*Adding the task */}
                 </div>
                 <div className="col-6">
                 <button onClick={()=>{
@@ -16,7 +16,7 @@ function ShowTodo(props) {
             </div>
             
         </div>
-    )
+    ) 
 }
 
 export default ShowTodo
